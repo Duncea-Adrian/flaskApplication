@@ -18,12 +18,11 @@ def allData():
 
 
 # Define the endpoint
-@app.route('/cauta/title/', methods=['GET'])
-def search():
-    title = request.args.get('title')
+@app.route('/cauta/title/<cuvant_cautat>', methods=['GET'])
+def search(cuvant_cautat):
     results = []
     for item in data:
-        if item['Title'] == title:
+        if item['Title'] == cuvant_cautat:
             results.append(item)
     return jsonify(results)
 
