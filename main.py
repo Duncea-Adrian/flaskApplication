@@ -4,7 +4,6 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-# Load the JSON data
 with open('products.json', 'r') as f:
     data = json.load(f)
 
@@ -17,7 +16,6 @@ def allData():
     return jsonify(results)
 
 
-# Define the endpoint
 @app.route('/cauta/title/<cuvant_cautat>', methods=['GET'])
 def search(cuvant_cautat):
     results = []
