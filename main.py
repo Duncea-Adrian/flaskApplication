@@ -7,7 +7,7 @@ app = Flask(__name__)
 with open('products.json', 'r') as f:
     data = json.load(f)
 
-# Endpoint / returneaza tot continutul fisierului json
+# Endpoint-ul / returneaza tot continutul fisierului json
 @app.route('/', methods=['GET'])
 def allData():
     results = []
@@ -15,7 +15,7 @@ def allData():
         results.append(item)
     return jsonify(results)
 
-# Enpoint-ul /cauta/title/<cuvant_cautat returneaza continutul titlului cautat
+# Endoint-ul /cauta/title/<cuvant_cautat returneaza continutul titlului cautat
 @app.route('/cauta/title/<cuvant_cautat>', methods=['GET'])
 def search(cuvant_cautat):
     results = []
